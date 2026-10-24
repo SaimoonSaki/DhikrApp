@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090d18"><title>Zikr</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090d18;--s1:#101626;--s2:#182036;--ln:#232d48;--tx:#e8e6df;--dm:#8590ad;--gd:#e8b458;--tl:#4fb3a5;--on:#1a1405;--on2:#06201c;--nv:#0c1222;--rg:#1b2444;--h0:#161d31;--h1:#4a3d1f;--h2:#8a6c2e;--h3:#c79a43;--h4:#f0bd5e;--bad:#e07a6a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html[data-theme=mono]{--bg:#000;--s1:#0b0b0b;--s2:#161616;--ln:#2c2c2c;--tx:#fff;--dm:#9a9a9a;--gd:#fff;--tl:#bdbdbd;--on:#000;--on2:#000;--nv:#000;--rg:#1c1c1c;--h0:#141414;--h1:#333;--h2:#666;--h3:#aaa;--h4:#fff;--bad:#bbb}
+html[data-theme=paper]{--bg:#f6f5f1;--s1:#fff;--s2:#ebe9e2;--ln:#d9d6cc;--tx:#15151a;--dm:#6a6a75;--gd:#1a1a1a;--tl:#777;--on:#fff;--on2:#fff;--nv:#fff;--rg:#ece9e0;--h0:#e8e6df;--h1:#c9c6bb;--h2:#9a968a;--h3:#5d5a52;--h4:#111;--bad:#b3402f;color-scheme:light}
+html[data-theme=emerald]{--bg:#06120f;--s1:#0c1d18;--s2:#132a23;--ln:#1c3a31;--tx:#e6efe9;--dm:#7fa393;--gd:#3ecf9a;--tl:#e8b458;--on:#04170f;--on2:#1a1405;--nv:#08150f;--rg:#12302a;--h0:#0f211b;--h1:#1b4a3a;--h2:#23805f;--h3:#2fb283;--h4:#5af0b9}
+html[data-theme=ruby]{--bg:#12070b;--s1:#1d0d13;--s2:#2a1219;--ln:#40202a;--tx:#f3e6e8;--dm:#a8828a;--gd:#ff5c7a;--tl:#f0b27a;--on:#2a0710;--on2:#2a1405;--nv:#160910;--rg:#3a1522;--h0:#230f16;--h1:#55202f;--h2:#8f3350;--h3:#cc4468;--h4:#ff6f8c;--bad:#ff9a80}
+html[data-theme=ocean]{--bg:#050d17;--s1:#0a1a2b;--s2:#102640;--ln:#1a3659;--tx:#e4eef8;--dm:#7d9bbd;--gd:#4aa8ff;--tl:#7be0d0;--on:#021224;--on2:#021a17;--nv:#07121f;--rg:#123055;--h0:#0d2038;--h1:#17406f;--h2:#1f64b0;--h3:#3a8be0;--h4:#6bb5ff}
+*{box-sizing:inherit;-webkit-tap-highlight-color:transparent}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:16px/1.4 Outfit,system-ui,sans-serif;padding-bottom:84px}
+main{max-width:480px;margin:0 auto;padding:14px 16px}
+button,input{font:inherit;color:inherit}
+button{background:var(--s2);border:1px solid var(--ln);border-radius:12px;padding:9px 14px;touch-action:manipulation}
+button:disabled{opacity:.3}
+input{background:var(--s1);border:1px solid var(--ln);border-radius:10px;padding:10px 12px;width:100%;margin:0 0 8px}
+.dm{color:var(--dm)}
+.pkg{display:flex;align-items:center;justify-content:space-between;color:var(--dm);font-size:14px}
+.pkg button{padding:4px 14px;font-size:22px;line-height:1}
+.txt{text-align:center;padding:14px 4px 6px;min-height:170px}
+.ar{font:400 34px/1.9 Amiri,"Noto Naskh Arabic",serif;direction:rtl}
+.bn{font:600 19px/1.5 "Hind Siliguri","Noto Sans Bengali",sans-serif;color:var(--gd);margin:2px 0}
+.en{color:var(--dm);font-size:14px}.src{color:var(--dm);opacity:.7;font-size:12px;margin-top:4px}
+.ring{position:relative;display:block;width:250px;height:250px;margin:10px auto;border-radius:50%;border:0;padding:0;background:radial-gradient(circle at 50% 30%,var(--rg),var(--s1) 70%);user-select:none;-webkit-user-select:none;transition:transform .08s}
+.ring:active{transform:scale(.97)}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.tr,.pg{fill:none;stroke-width:7}.tr{stroke:var(--ln)}.pg{stroke:var(--gd);stroke-linecap:round;transition:stroke-dashoffset .15s}
+.ring b{display:block;font-size:72px;line-height:1;font-weight:600}.ring i{font-style:normal;color:var(--dm)}
+.ring span.in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ctl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.ctl label{display:flex;align-items:center;gap:8px;color:var(--dm)}.ctl input{width:84px;margin:0;text-align:center}
+.today{text-align:center;color:var(--dm);font-size:14px;margin-top:14px}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--nv);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;border-radius:0;background:none;padding:16px 0;font-size:14px;color:var(--dm);border-top:2px solid transparent}
+nav button.on{color:var(--gd);border-top-color:var(--gd)}
+.card{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:14px;margin:0 0 12px}
+h3{margin:0 0 10px;font-size:15px;font-weight:600}
+.it{display:flex;align-items:center;gap:8px;border-top:1px solid var(--ln)}.it:first-of-type{border-top:0}
+.it>button:first-child{flex:1;min-width:0;background:none;border:0;display:flex;justify-content:space-between;gap:10px;text-align:left;padding:10px 0}
+.it.cur .lb{color:var(--gd)}.lb{font-family:"Hind Siliguri",sans-serif;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.la{font-family:Amiri,serif;direction:rtl;color:var(--dm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40%}
+.it em{font-style:normal;color:var(--dm);font-size:13px}.x{padding:2px 10px}
+.pri{width:100%;background:var(--gd);color:var(--on);border:0;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stats b{display:block;font-size:26px;font-weight:600}.stats span{color:var(--dm);font-size:12px}
+.seg{display:flex;gap:6px;margin-bottom:6px}.seg button{padding:4px 12px;font-size:13px}.seg .on{background:var(--gd);color:var(--on);border-color:var(--gd)}
+.ch{width:100%;height:auto}.ch text{fill:var(--dm);font-size:10px}
+.cmp{margin-bottom:12px}.cl{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+.cl em{font-style:normal;font-size:13px;color:var(--dm)}.cl .up{color:var(--tl)}.cl .dn{color:var(--bad)}
+.cb{position:relative;height:22px;background:var(--s2);border-radius:7px;margin-bottom:4px;overflow:hidden}
+.cb i{position:absolute;inset:0 auto 0 0;background:var(--gd);border-radius:7px;min-width:3px}.cb.o i{background:var(--dm);opacity:.5}
+.cb b{position:relative;font-size:12px;font-weight:400;padding-left:8px;line-height:22px;color:#fff;mix-blend-mode:difference}
+.hm{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);gap:3px}.hm div{aspect-ratio:1;border-radius:3px}
+.pg5{display:grid;grid-template-columns:repeat(28,1fr);gap:2px}.pg5 div{aspect-ratio:1;border-radius:2px}
+.h0,.p0{background:var(--h0)}.h1{background:var(--h1)}.h2{background:var(--h2)}.h3{background:var(--h3)}.h4{background:var(--h4)}.p2{background:var(--gd)}.p1{background:var(--tl)}
+.dnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.dnav span{font-weight:600}
+.big{text-align:center;font-size:18px;color:var(--dm);margin-bottom:8px}.big b{font-size:48px;color:var(--tx)}
+.pr{display:flex;align-items:center;gap:8px;margin-bottom:8px}.pr span{flex:1;font-size:17px}
+.pr button.on1{background:var(--tl);color:var(--on2);border-color:var(--tl)}.pr button.on2{background:var(--gd);color:var(--on);border-color:var(--gd)}
+.note{font-size:14px;color:var(--dm);margin:8px 0 0}
+textarea{width:100%;height:80px;background:var(--s1);color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:8px;margin:8px 0;font:12px monospace}
+#toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--gd);color:var(--on);padding:8px 16px;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s;font-size:14px}#toast.show{opacity:1}
+input[type=color]{padding:3px;height:44px}input[type=range]{padding:0;border:0;background:none}
+.sws{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.sw{display:flex;align-items:center;gap:10px;text-align:left;padding:8px 10px}.sw.on{border-color:var(--gd)}.sw i{width:32px;height:32px;border-radius:50%;border:3px solid;flex:none}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.credit{text-align:center;color:var(--dm);font-size:12px;opacity:.7;margin:18px 0 0}
+</style></head><body>
+<main id="app"></main>
+<nav><button data-a="v" data-p="count" data-v="count">Count</button><button data-a="v" data-p="lib" data-v="lib">Library</button><button data-a="v" data-p="pray" data-v="pray">Prayer</button><button data-a="v" data-p="stats" data-v="stats">Stats</button><button data-a="v" data-p="set" data-v="set">Settings</button></nav>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),PR=["Fajr","Dhuhr","Asr","Maghrib","Isha"];
+const pad2=n=>String(n).padStart(2,"0"),dk=d=>{d=d||new Date();return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate())};
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const P=[
+{n:"After every prayer",i:[
+["سُبْحَانَ اللَّهِ","সুবহানাল্লাহ","Glory be to Allah",33,"Sahih Muslim"],
+["الْحَمْدُ لِلَّهِ","আলহামদুলিল্লাহ","All praise belongs to Allah",33,"Sahih Muslim"],
+["اللَّهُ أَكْبَرُ","আল্লাহু আকবার","Allah is the Greatest",34,"Sahih Muslim"]]},
+{n:"Daily dhikr",i:[
+["لَا إِلَٰهَ إِلَّا اللَّهُ","লা ইলাহা ইল্লাল্লাহ","There is no god but Allah",100,"Tirmidhi"],
+["سُبْحَانَ اللَّهِ وَبِحَمْدِهِ","সুবহানাল্লাহি ওয়া বিহামদিহি","Glory and praise be to Allah",100,"Bukhari & Muslim"],
+["سُبْحَانَ اللَّهِ الْعَظِيمِ","সুবহানাল্লাহিল আযীম","Glory be to Allah, the Magnificent",100,"Bukhari & Muslim"],
+["لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ","লা হাওলা ওয়ালা কুওওয়াতা ইল্লা বিল্লাহ","No power or strength except with Allah",100,"Bukhari & Muslim"],
+["اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ","আল্লাহুম্মা সাল্লি আলা মুহাম্মাদিন ওয়া আলা আলি মুহাম্মাদ","O Allah, send blessings upon Muhammad ﷺ and his family",100,"Qur’an 33:56"]]},
+{n:"Istighfar",i:[
+["أَسْتَغْفِرُ اللَّهَ","আস্তাগফিরুল্লাহ","I seek forgiveness from Allah",100,"Muslim"],
+["اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ","আল্লাহুম্মা আন্তা রাব্বী লা ইলাহা ইল্লা আন্তা, খালাকতানী ওয়া আনা আবদুকা, ওয়া আনা আলা আহদিকা ওয়া ওয়াদিকা মাসতাতা’তু, আউযু বিকা মিন শাররি মা সানা’তু, আবূউ লাকা বিনি’মাতিকা আলাইয়া, ওয়া আবূউ বিযানবী ফাগফির লী ফাইন্নাহূ লা ইয়াগফিরুয যুনূবা ইল্লা আন্তা","Sayyidul Istighfar, the master prayer for forgiveness",1,"Sahih Bukhari"]]},
+{n:"Qur’anic duas",i:[
+["لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ","লা ইলাহা ইল্লা আন্তা সুবহানাকা ইন্নী কুনতু মিনায যালিমীন","The dua of Yunus (AS)",21,"Qur’an 21:87"],
+["رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ","রাব্বানা আতিনা ফিদ্দুনিয়া হাসানাতাও ওয়া ফিল আখিরাতি হাসানাতাও ওয়া কিনা আযাবান নার","Our Lord, give us good in this world and the next, and protect us from the Fire",3,"Qur’an 2:201"],
+["رَبِّ زِدْنِي عِلْمًا","রাব্বি যিদনী ইলমা","My Lord, increase me in knowledge",7,"Qur’an 20:114"],
+["رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي","রাব্বিশ রাহ লী সাদরী ওয়া ইয়াসসির লী আমরী","My Lord, expand my chest and ease my task for me",7,"Qur’an 20:25-26"],
+["رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ","রাব্বানা যালামনা আনফুসানা ওয়া ইল্লাম তাগফির লানা ওয়া তারহামনা লানাকূনান্না মিনাল খাসিরীন","The dua of Adam (AS) and Hawwa",7,"Qur’an 7:23"],
+["حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ","হাসবুনাল্লাহু ওয়া নি’মাল ওয়াকীল","Allah is enough for us, and He is the best disposer of affairs",33,"Qur’an 3:173"]]}];
+const PK=()=>[...P.map((p,a)=>({n:p.n,i:p.i.map((x,b)=>({id:a+"."+b,ar:x[0],bn:x[1],en:x[2],t:x[3],src:x[4]||""}))})),{n:"My dhikr",i:S.custom.map(c=>({id:c.id,ar:c.ar,bn:c.bn,en:c.en,t:c.t,src:""}))}];
+let S={cur:"0.0",tg:{},cn:{},days:{},pr:{},custom:[],last:0};
+try{const r=localStorage.getItem("zk1");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+S.set=Object.assign({theme:"gold",ui:"en",show:"both",fs:34,vib:1,acc:""},S.set);
+const save=()=>{try{localStorage.setItem("zk1",JSON.stringify(S))}catch(e){}};
+const find=id=>{for(const p of PK())for(const x of p.i)if(x.id===id)return[x,p];const p=PK()[0];return[p.i[0],p]};
+const fmt=s=>{s=Math.round(s);const h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h?h+"h "+m+"m":m?m+"m":s+"s"};
+const keys=n=>Array.from({length:n},(_,i)=>dk(addD(new Date(),i-n+1)));
+const dt=k=>{let c=0,s=0;const d=S.days[k]||{};for(const i in d){c+=d[i][0];s+=d[i][1]}return[c,s]};
+const sum=(ks,j)=>ks.reduce((a,k)=>a+dt(k)[j],0),wk=o=>keys(7+7*o).slice(0,7);
+const ps=ks=>ks.reduce((a,k)=>a+PR.filter(n=>(S.pr[k]||{})[n]).length,0);
+const streak=f=>{let n=0,d=new Date();if(!f(dk(d)))d=addD(d,-1);while(f(dk(d))){n++;d=addD(d,-1)}return n};
+let V="count",PD=new Date(),RG=7;
+function toast(m){const t=$("#toast");t.textContent=tr(m);t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),2400)}
+function upd(){const c=$("#cnt");if(!c)return;const[x]=find(S.cur),t=S.tg[x.id]||x.t,n=S.cn[x.id]||0;c.textContent=n;$("#tgv").textContent=t;$("#rg").style.strokeDashoffset=653.45*(1-Math.min(1,n/t));const[a,b]=dt(dk());$("#tt").textContent=tr("Today")+": "+a+" "+tr("recitations")+" · "+fmt(b)}
+function tap(){const[x,p]=find(S.cur),id=x.id,t=S.tg[id]||x.t,n=Date.now();S.cn[id]=(S.cn[id]||0)+1;
+const k=dk(),d=S.days[k]=S.days[k]||{},e=d[id]=d[id]||[0,0];e[0]++;if(S.last&&n-S.last<30000)e[1]+=(n-S.last)/1000;S.last=n;save();
+S.set.vib&&navigator.vibrate&&navigator.vibrate(S.cn[id]===t?[40,60,40]:12);upd();
+if(S.cn[id]===t){const i=p.i.findIndex(y=>y.id===id);if(i<p.i.length-1)setTimeout(()=>{const nx=p.i[i+1].id;S.cur=nx;S.cn[nx]=0;save();if(V=="count")render()},700)}}
+function vCount(){const[x,p]=find(S.cur),i=p.i.findIndex(y=>y.id===x.id);
+return`<div class="pkg"><button data-a="prev">‹</button><span>${esc(p.n)} · ${i+1}/${p.i.length}</span><button data-a="next">›</button></div>
+<div class="txt"><div class="ar" style="font-size:${S.set.fs}px">${esc(x.ar)}</div>${S.set.show!="en"&&x.bn?`<div class="bn">${esc(x.bn)}</div>`:""}${S.set.show!="bn"&&x.en?`<div class="en">${esc(x.en)}</div>`:""}${x.src?`<div class="src">${esc(x.src)}</div>`:""}</div>
+<button class="ring" data-a="tap" aria-label="Count"><svg viewBox="0 0 240 240"><circle class="tr" cx="120" cy="120" r="104"/><circle id="rg" class="pg" cx="120" cy="120" r="104" stroke-dasharray="653.45" stroke-dashoffset="653.45"/></svg><span class="in"><b id="cnt">0</b><i>of <span id="tgv"></span></i></span></button>
+<div class="ctl"><button data-a="reset">Reset</button><label>Target <input type="number" id="tgi" min="1" value="${S.tg[x.id]||x.t}"></label></div><div class="today" id="tt"></div>`}
+function vLib(){return PK().map(p=>`<div class="card"><h3>${esc(p.n)}</h3>${p.i.map(x=>`<div class="it ${x.id==S.cur?"cur":""}"><button data-a="pick" data-p="${x.id}"><span class="lb">${esc(lab(x))}</span><span class="la">${esc(x.ar)}</span></button><em>${S.tg[x.id]||x.t}×</em>${x.id[0]=="c"?`<button class="x" data-a="del" data-p="${x.id}">×</button>`:""}</div>`).join("")||`<p class="dm">Nothing here yet. Add your own below.</p>`}</div>`).join("")+
+`<div class="card"><h3>Add your own</h3><input id="na" placeholder="Arabic or original text"><input id="nb" placeholder="Bangla transliteration"><input id="ne" placeholder="Meaning (optional)"><input id="nt" type="number" min="1" value="33"><button class="pri" data-a="add">Add to My dhikr</button></div>`}
+const cmp=(l,a,b,f)=>{const m=Math.max(a,b,1),d=b?Math.round((a-b)/b*100):null;return`<div class="cmp"><div class="cl"><span>${l}</span><em class="${d>0?"up":d<0?"dn":""}">${d===null?(a?"new":"–"):(d>0?"+":"")+d+"%"}</em></div><div class="cb"><i style="width:${a/m*100}%"></i><b>This week ${f(a)}</b></div><div class="cb o"><i style="width:${b/m*100}%"></i><b>Last week ${f(b)}</b></div></div>`};
+const dayL=k=>new Date(k+"T00:00").toLocaleDateString("en",{weekday:"narrow"});
+function bars(v,lb){const m=Math.max(1,...v),w=320/v.length;return`<svg viewBox="0 0 320 130" class="ch">${v.map((x,i)=>{const h=x/m*96;return`<rect x="${i*w+w*.15}" y="${104-h}" width="${w*.7}" height="${x?Math.max(h,2):0}" rx="3" style="fill:var(--${i==v.length-1?"h4":"h3"})"/>`+(lb(i)?`<text x="${i*w+w/2}" y="122" text-anchor="middle">${lb(i)}</text>`:"")}).join("")}</svg>`}
+function vStats(){const ks=keys(RG),v=ks.map(k=>dt(k)[0]),m30=keys(30),tot={};
+for(const k in S.days)for(const i in S.days[k])tot[i]=(tot[i]||0)+S.days[k][i][0];
+const top=Object.entries(tot).sort((a,b)=>b[1]-a[1]).slice(0,5),mx=top[0]?top[0][1]:1,hv=keys(84),hm=Math.max(1,...hv.map(k=>dt(k)[0])),lead=new Date(hv[0]+"T00:00").getDay(),sk=streak(k=>dt(k)[0]>0);
+return`<div class="card"><div class="stats"><div><b>${dt(dk())[0]}</b><span>today</span></div><div><b>${sum(keys(7),0)}</b><span>7 days</span></div><div><b>${sum(m30,0)}</b><span>30 days</span></div></div>
+<p class="note">${fmt(sum(m30,1))} of dhikr in the last 30 days · ${sk?sk+"-day streak, keep it going":"start today to begin a streak"}</p></div>
+<div class="card"><div class="seg">${[7,30,90].map(n=>`<button class="${RG==n?"on":""}" data-a="rg" data-p="${n}">${n} days</button>`).join("")}</div>${bars(v,i=>RG==7?dayL(ks[i]):RG==30?(i%5==4?+ks[i].slice(8):""):(i%15==14?ks[i].slice(5):""))}</div>
+<div class="card"><h3>This week vs last week</h3>${cmp("Recitations",sum(wk(0),0),sum(wk(1),0),x=>x)}${cmp("Time spent",sum(wk(0),1),sum(wk(1),1),fmt)}</div>
+<div class="card"><h3>Most recited</h3>${top.map(([id,c])=>{const[x]=find(id);return`<div class="cmp"><div class="cl"><span class="lb">${esc(lab(x))}</span></div><div class="cb"><i style="width:${c/mx*100}%"></i><b>${c}</b></div></div>`}).join("")||`<p class="dm">Your top dhikr will show up here.</p>`}</div>
+<div class="card"><h3>Last 12 weeks</h3><div class="hm">${"<div></div>".repeat(lead).replace(/<div>/g,'<div style="visibility:hidden">')}${hv.map(k=>{const c=dt(k)[0];return`<div class="h${c?Math.ceil(4*c/hm):0}" title="${k}: ${c}"></div>`}).join("")}</div></div>
+<div class="card"><h3>Backup</h3><p class="note" style="margin:0 0 8px">Everything is saved on this phone only. Download a CSV now and then, and paste it back below to restore.</p><button class="pri" data-a="dl">Download CSV</button><textarea id="bk" placeholder="Paste a CSV backup here to restore"></textarea><button data-a="restore">Restore from CSV</button></div>`}
+function vPray(){const k=dk(PD),st=S.pr[k]||{},dn=PR.filter(n=>st[n]).length,T=k==dk(),p30=keys(30),g=keys(28),full=x=>PR.every(n=>(S.pr[x]||{})[n]);
+const rate=n=>Math.round(p30.filter(x=>(S.pr[x]||{})[n]).length/30*100),rs=PR.map(n=>[n,rate(n)]).sort((a,b)=>a[1]-b[1]),fs=streak(full);
+return`<div class="dnav"><button data-a="pd" data-p="-1">‹</button><span>${T?"Today":PD.toLocaleDateString("en",{weekday:"short",day:"numeric",month:"short"})}</span><button data-a="pd" data-p="1" ${T?"disabled":""}>›</button></div>
+<div class="big"><b>${dn}</b> / 5 <span>prayed</span></div><div class="cb" style="height:10px;margin-bottom:14px"><i style="width:${dn*20}%"></i></div>
+${PR.map(n=>`<div class="pr"><span>${n}</span><button class="${st[n]==1?"on1":""}" data-a="ps" data-p="${n}:1">Prayed</button><button class="${st[n]==2?"on2":""}" data-a="ps" data-p="${n}:2">In jamaah</button></div>`).join("")}
+<div class="card" style="margin-top:14px"><h3>This week vs last week</h3>${cmp("Prayers logged",ps(wk(0)),ps(wk(1)),x=>x+"/35")}<p class="note" style="margin:0">${fs?fs+"-day streak of all five prayers.":"Pray all five today to start a streak."}</p></div>
+<div class="card"><h3>Consistency, last 30 days</h3>${PR.map(n=>`<div class="cmp" style="margin-bottom:6px"><div class="cb"><i style="width:${rate(n)}%"></i><b>${n} ${rate(n)}%</b></div></div>`).join("")}${S.pr&&Object.keys(S.pr).length?`<p class="note">Strongest: ${rs[4][0]} (${rs[4][1]}%). Needs the most care: ${rs[0][0]} (${rs[0][1]}%).</p>`:""}</div>
+<div class="card"><h3>Last 28 days</h3>${PR.map(n=>`<div class="pg5" style="margin-bottom:2px">${g.map(x=>`<div class="p${(S.pr[x]||{})[n]||0}"></div>`).join("")}</div>`).join("")}<p class="note">Rows: ${PR.join(", ")}. Teal prayed, gold in jamaah.</p></div>`}
+function toCSV(){const q=s=>/[",\n]/.test(s)?'"'+String(s).replace(/"/g,'""')+'"':s,r=[["type","date","key","a","b","c","d"]];
+for(const k in S.days)for(const i in S.days[k])r.push(["d",k,i,S.days[k][i][0],Math.round(S.days[k][i][1])]);
+for(const k in S.pr)for(const n in S.pr[k])if(S.pr[k][n])r.push(["p",k,n,S.pr[k][n]]);
+S.custom.forEach(c=>r.push(["c","",c.id,c.ar,c.bn,c.en,c.t]));return r.map(a=>a.map(q).join(",")).join("\n")}
+function parse(t){const rows=[];let r=[],f="",qt=0;for(let i=0;i<t.length;i++){const c=t[i];if(qt){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else qt=0}else f+=c}else if(c=='"')qt=1;else if(c==","){r.push(f);f=""}else if(c=="\n"||c=="\r"){if(c=="\r"&&t[i+1]=="\n")i++;r.push(f);f="";rows.push(r);r=[]}else f+=c}if(f||r.length){r.push(f);rows.push(r)}return rows}
+async function dl(){const csv=toCSV(),fn="zikr-backup-"+dk()+".csv";$("#bk").value=csv;
+try{const C=window.Capacitor&&Capacitor.Plugins;if(C&&C.Filesystem&&C.Share){const r=await C.Filesystem.writeFile({path:fn,data:csv,directory:"CACHE",encoding:"utf8"});await C.Share.share({title:fn,url:r.uri});return}if(window.claude){const d=await claude.use("downloads");if(d){await d.save({filename:fn,data:csv});return}}else{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download=fn;a.click();return}}catch(e){}
+$("#bk").select();toast("Copy the text below and keep it somewhere safe")}
+function restore(){let n=0;for(const[ty,d,k,a,b,c,e]of parse($("#bk").value.trim())){if(ty=="d"&&d){(S.days[d]=S.days[d]||{})[k]=[+a||0,+b||0];n++}else if(ty=="p"&&d){(S.pr[d]=S.pr[d]||{})[k]=+a||0;n++}else if(ty=="c"&&k&&!S.custom.some(x=>x.id==k)){S.custom.push({id:k,ar:a,bn:b,en:c,t:+e||33});n++}}save();render();toast(n?"Restored "+n+" rows":"Nothing to restore")}
+function act(a,p){
+if(a=="tap")tap();
+else if(a=="reset"){S.cn[S.cur]=0;save();upd()}
+else if(a=="prev"||a=="next"){const[x,pk]=find(S.cur),i=pk.i.findIndex(y=>y.id==x.id)+(a=="next"?1:-1);if(pk.i[i]){S.cur=pk.i[i].id;save();render()}}
+else if(a=="pick"){const[x]=find(p);S.cur=x.id;if((S.cn[x.id]||0)>=(S.tg[x.id]||x.t))S.cn[x.id]=0;save();V="count";render()}
+else if(a=="del"){S.custom=S.custom.filter(c=>c.id!=p);if(S.cur==p)S.cur="0.0";save();render()}
+else if(a=="add"){const ar=$("#na").value.trim(),bn=$("#nb").value.trim();if(!ar&&!bn)return toast("Enter the text first");S.custom.push({id:"c"+Date.now(),ar,bn,en:$("#ne").value.trim(),t:Math.max(1,+$("#nt").value||33)});save();render();toast("Added to My dhikr")}
+else if(a=="v"){V=p;scrollTo(0,0);render()}
+else if(a=="rg"){RG=+p;render()}
+else if(a=="pd"){PD=addD(PD,+p);if(PD>new Date())PD=new Date();render()}
+else if(a=="ps"){const[n,v]=p.split(":"),k=dk(PD);S.pr[k]=S.pr[k]||{};S.pr[k][n]=S.pr[k][n]==v?0:+v;save();render()}
+else if(a=="th"){S.set.theme=p;S.set.acc="";save();theme();render()}
+else if(a=="accr"){S.set.acc="";save();theme();render()}
+else if(a=="sh"){S.set.show=p;save();render()}
+else if(a=="ui"){S.set.ui=p;save();render()}
+else if(a=="vib"){S.set.vib=+p;save();render();if(S.set.vib&&navigator.vibrate)navigator.vibrate(30)}
+else if(a=="dl")dl();else if(a=="restore")restore()}
+const L={"Made with Claude by Anthropic":"Anthropic-এর Claude দিয়ে তৈরি","Consistency, last 30 days":"ধারাবাহিকতা, শেষ ৩০ দিন","Last 28 days":"শেষ ২৮ দিন","Last 12 weeks":"শেষ ১২ সপ্তাহ","This week vs last week":"এই সপ্তাহ বনাম গত সপ্তাহ","After every prayer":"প্রতি নামাজের পরে","Daily dhikr":"দৈনন্দিন যিকির","Qur’anic duas":"কুরআনের দোয়া","Add to My dhikr":"আমার যিকিরে যোগ করুন","Restore from CSV":"CSV থেকে রিস্টোর","Download CSV":"CSV ডাউনলোড","Most recited":"সবচেয়ে বেশি পঠিত","Add your own":"নিজেরটা যোগ করুন","Time spent":"সময় ব্যয়","This week":"এই সপ্তাহ","Last week":"গত সপ্তাহ","My dhikr":"আমার যিকির","Istighfar":"ইস্তিগফার","Fajr":"ফজর","Dhuhr":"যোহর","Asr":"আসর","Maghrib":"মাগরিব","Isha":"এশা"};
+const X={"Count":"গণনা","Library":"লাইব্রেরি","Prayer":"নামাজ","Stats":"পরিসংখ্যান","Settings":"সেটিংস","Reset":"রিসেট","Target":"লক্ষ্য","Today":"আজ","today":"আজ","Backup":"ব্যাকআপ","Recitations":"পাঠ","recitations":"পাঠ","Prayed":"পড়েছি","prayed":"পড়া হয়েছে","In jamaah":"জামাতে","Theme":"থিম","Accent colour":"অ্যাকসেন্ট রং","Use theme colour":"থিমের রং","Dhikr text":"যিকিরের লেখা","App language":"অ্যাপের ভাষা","Arabic text size":"আরবি লেখার আকার","Vibration":"ভাইব্রেশন","About":"পরিচিতি","Both":"দুটোই","Bangla":"বাংলা","English":"ইংরেজি","On":"চালু","Off":"বন্ধ"};
+const LK=Object.keys(L).sort((a,b)=>b.length-a.length);
+const tr=s=>{if(S.set.ui!="bn")return s;if(X[s])return X[s];const m=/^(\d+) days$/.exec(s);if(m)return m[1]+" দিন";for(const k of LK)s=s.split(k).join(L[k]);return s};
+function i18n(){if(S.set.ui!="bn")return;const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),ns=[];while(w.nextNode())ns.push(w.currentNode);ns.forEach(n=>{if(n.parentElement.closest(".txt,.it,textarea,script,.nt"))return;const s=n.nodeValue,t=s.trim();if(!t)return;const r=tr(t);if(r!==t)n.nodeValue=s.replace(t,r)})}
+const lab=x=>S.set.show=="en"?(x.en||x.bn||x.ar):(x.bn||x.en||x.ar);
+const TH=[["gold","Midnight gold","#090d18","#e8b458"],["mono","Black & white","#000000","#ffffff"],["paper","Paper white","#f6f5f1","#1a1a1a"],["emerald","Emerald","#06120f","#3ecf9a"],["ruby","Ruby","#12070b","#ff5c7a"],["ocean","Ocean","#050d17","#4aa8ff"]];
+const sg=(a,cur,o)=>o.map(([v,l])=>`<button class="${cur==v?"on":""}" data-a="${a}" data-p="${v}">${l}</button>`).join("");
+function theme(){const s=S.set,r=document.documentElement,st=r.style;r.dataset.theme=s.theme;["--gd","--h4","--h3","--h2","--h1","--on"].forEach(p=>st.removeProperty(p));
+if(/^#[0-9a-f]{6}$/i.test(s.acc||"")){const c=s.acc,lum=parseInt(c.slice(1,3),16)*.299+parseInt(c.slice(3,5),16)*.587+parseInt(c.slice(5,7),16)*.114,m=n=>"color-mix(in srgb,"+c+" "+n+"%,var(--s2))";st.setProperty("--gd",c);st.setProperty("--h4",c);st.setProperty("--h3",m(70));st.setProperty("--h2",m(45));st.setProperty("--h1",m(25));st.setProperty("--on",lum>150?"#000":"#fff")}
+document.querySelector('meta[name=theme-color]').content=getComputedStyle(r).getPropertyValue("--bg").trim()}
+function vSet(){const s=S.set;return`<div class="card"><h3>Theme</h3><div class="sws">${TH.map(t=>`<button class="sw ${s.theme==t[0]?"on":""}" data-a="th" data-p="${t[0]}"><i style="background:${t[2]};border-color:${t[3]}"></i><span class="nt">${t[1]}</span></button>`).join("")}</div>
+<h3 style="margin-top:14px">Accent colour</h3><div class="row"><input type="color" id="acc" value="${s.acc||"#e8b458"}" style="margin:0"><button data-a="accr">Use theme colour</button></div></div>
+<div class="card"><h3>Dhikr text</h3><div class="seg">${sg("sh",s.show,[["bn","Bangla"],["en","English"],["both","Both"]])}</div><p class="note">Bangla is the transliteration, English is the meaning.</p>
+<h3 style="margin-top:14px">App language</h3><div class="seg nt">${sg("ui",s.ui,[["en","English"],["bn","বাংলা"]])}</div>
+<h3 style="margin-top:14px">Arabic text size</h3><input type="range" id="fsr" min="24" max="52" value="${s.fs}"><div class="ar nt" id="fsp" style="text-align:center;font-size:${s.fs}px">سُبْحَانَ اللَّهِ</div>
+<div class="row" style="margin-top:10px"><span>Vibration</span><div class="seg" style="margin:0">${sg("vib",s.vib,[[1,"On"],[0,"Off"]])}</div></div></div>
+<div class="card"><h3>About</h3><p class="note" style="margin:0">Zikr is a free, offline dhikr counter and prayer tracker with no ads. Your data stays on this phone.</p><p class="note">Made with Claude by Anthropic.</p></div>`}
+const NV={count:"Count",lib:"Library",pray:"Prayer",stats:"Stats",set:"Settings"};
+function render(){$("#app").innerHTML=({count:vCount,lib:vLib,pray:vPray,stats:vStats,set:vSet})[V]()+`<p class="credit">Made with Claude by Anthropic</p>`;document.querySelectorAll("nav button").forEach(b=>{b.textContent=NV[b.dataset.v];b.classList.toggle("on",b.dataset.v===V)});upd();i18n()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(b)act(b.dataset.a,b.dataset.p)});
+document.addEventListener("input",e=>{if(e.target.id=="acc"){S.set.acc=e.target.value;save();theme()}else if(e.target.id=="fsr"){S.set.fs=+e.target.value;save();$("#fsp").style.fontSize=S.set.fs+"px"}});
+document.addEventListener("change",e=>{if(e.target.id=="tgi"){S.tg[S.cur]=Math.max(1,+e.target.value||1);save();upd()}});
+theme();render();
+</script></body></html>
